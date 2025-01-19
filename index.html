@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Automatic Password Generator</h1>
+        <p>Create strong, secure passwords in seconds.</p>
+    </header>
+    
+    <div class="container">
+        <div class="form-group">
+            <label for="password-length">Password Length</label>
+            <input type="range" id="password-length" min="8" max="32" value="16" oninput="updateLengthDisplay(this.value)">
+            <span id="length-display">16</span>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="include-uppercase" checked>
+                Include Uppercase Letters
+            </label>
+            <label>
+                <input type="checkbox" id="include-lowercase" checked>
+                Include Lowercase Letters
+            </label>
+            <label>
+                <input type="checkbox" id="include-numbers" checked>
+                Include Numbers
+            </label>
+            <label>
+                <input type="checkbox" id="include-symbols" checked>
+                Include Special Characters
+            </label>
+        </div>
+
+        <div class="form-group password-display">
+            <input type="text" id="generated-password" readonly>
+            <button onclick="copyToClipboard()">Copy</button>
+        </div>
+
+        <div class="form-group">
+            <button onclick="generatePassword()">Generate Password</button>
+        </div>
+
+        <div class="strength-indicator">
+            <div id="strength-bar" class="strength-bar"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Password Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"> </script>
+</body>
+</html>
